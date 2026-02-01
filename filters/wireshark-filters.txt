@@ -1,0 +1,45 @@
+# Wireshark Display Filters Used in This Project
+# --------------------------------------------
+
+# Show all TCP packets
+tcp
+
+# Show all UDP packets
+udp
+
+# Show only DNS packets (UDP port 53)
+dns
+udp.port == 53
+
+# Filter TCP SYN packets (Connection Request)
+tcp.flags.syn == 1 && tcp.flags.ack == 0
+
+# Filter TCP SYN-ACK packets (Server Response)
+tcp.flags.syn == 1 && tcp.flags.ack == 1
+
+# Filter TCP ACK packets (Connection Established)
+tcp.flags.ack == 1 && tcp.flags.syn == 0
+
+# Show only HTTP traffic
+http
+
+# Show HTTP POST requests (Login forms)
+http.request.method == "POST"
+
+# Show HTTPS / TLS traffic
+tls
+
+# Show QUIC traffic (YouTube streaming)
+quic
+
+# Show UDP traffic on port 443 (QUIC)
+udp.port == 443
+
+# Show traffic for a specific host (masked example)
+ip.addr == 192.168.x.x
+
+# Show only incoming packets
+ip.dst == 192.168.x.x
+
+# Show only outgoing packets
+ip.src == 192.168.x.x
