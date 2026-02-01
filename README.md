@@ -83,7 +83,3 @@ An unencrypted HTTP login was captured to demonstrate security risks.
 - UDP is faster but unreliable
 - HTTP exposes sensitive information
 - HTTPS/TLS is essential for secure communication
-
----
-
-## Repository Structure
